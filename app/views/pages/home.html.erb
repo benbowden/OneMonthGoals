@@ -1,11 +1,17 @@
 <div class="jumbotron center">
-     <h1>Welcome to my app!</h1>
+     <h2>Welcome to One Month Goals</h2>
      <% if user_signed_in? %>
-          # do something
+          Features will be right here... Currently working on them, stay tuned :)
      <% else %>
+     	<p>Change your life by publicizing your goals to the world.</p>
        <p>
-         <%= link_to "Log in", new_user_session_path, class: "btn btn-default btn-lg" %>
          <%= link_to "Sign up", new_user_registration_path, class: "btn btn-primary btn-lg" %>
+
+         <%= link_to "Log in", new_user_session_path, class: "btn btn-default btn-lg" %>
+         
        </p>
+
+
   	<% end %>  
+
 </div>
