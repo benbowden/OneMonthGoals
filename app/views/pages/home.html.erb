@@ -1,8 +1,10 @@
 <div class="jumbotron center">
-     <h2>Welcome to One Month Goals</h2>
+    
      <% if user_signed_in? %>
-          Cool stuff will be right here... Currently working on it, stay tuned :)
+      <h3>Currently working on site, however, click link below to get started if you are feeling crazy!</h3>
+          <%= link_to "List One Month Goals", pins_path, class: "btn btn-primary btn-lg" %>
      <% else %>
+      <h2>Welcome to One Month Goals</h2>
      	<p>Change your life by creating one month long goals.</p>
        <p>
          <%= link_to "Sign up", new_user_registration_path, class: "btn btn-primary btn-lg" %>
