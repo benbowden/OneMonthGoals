@@ -15,3 +15,5 @@
 /log/*.log
 /tmp
 .DS_Store
+#Added from course, basically where images were being added
+/public/system/* 
