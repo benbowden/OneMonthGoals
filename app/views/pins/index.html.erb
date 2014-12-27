@@ -1,5 +1,4 @@
-
-  <%= render 'pages/home' =%>
+<%= render 'pages/home' =%>
 
 
 <div id="pins" class="transitions-enabled">
@@ -19,9 +18,15 @@
           <%= link_to content_tag(pin.description), pin %>
           <p><%= pin.description %></p>
           <p><strong><%= pin.user.name if pin.user %></strong>
-         
+         <% if pin.user != current_user %>
+         <p> <%= link_to "View", pin %></p>
+         <% end %>
+
           <% if pin.user == current_user %>
+
              <div class="actions">
+              <%= link_to "View", pin %>
+
                 <%= link_to edit_pin_path(pin) do %>
                 <span class="glyphicon glyphicon-edit"></span>
                 Edit
