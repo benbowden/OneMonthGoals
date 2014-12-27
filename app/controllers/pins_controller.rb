@@ -1,10 +1,15 @@
 class PinsController < ApplicationController
   before_action :set_pin, only: [:show, :edit, :update, :destroy]
   before_action :correct_user, only: [:edit, :update, :destroy]
- 
+  
+
 
   def index
     @pins = Pin.all.order("created_at DESC").paginate(:page => params[:page])
+  end
+
+    def profile
+      @pins = Pin.all.order("created_at DESC").paginate(:page => params[:page])
   end
 
   def show

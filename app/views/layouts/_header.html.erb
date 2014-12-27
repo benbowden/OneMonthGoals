@@ -24,6 +24,7 @@
               <span class="glyphicon glyphicon-plus-sign"></span> New goal
             <% end %> 
           </li>
+          <li><%= link_to "My Goals", profile_path %></li>
           <li><%= link_to "Account Settings", edit_user_registration_path %></li>
           <li><%= link_to "Logout", destroy_user_session_path, method: :delete %></li> 
         <% else %>
