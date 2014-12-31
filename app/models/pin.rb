@@ -5,5 +5,6 @@ class Pin < ActiveRecord::Base
 
      #forces user to upload
      #validates :image, presence: true
+     validates :title, presence: true
       validates :description, presence: true
 end
