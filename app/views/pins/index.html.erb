@@ -16,7 +16,15 @@
 
         <div class="panel-body">
           <%= link_to content_tag(pin.description), pin %>
-          <p><%= pin.description %></p>
+          
+          <!-- used to not allow titles and was just descriptions -->
+          <% if pin.title.nil? %>
+            <p><%= pin.description %></p>
+          <% else %>
+            <p><%= pin.title %></p>
+
+          <% end %>
+          
           <p><strong><%= pin.user.name if pin.user %></strong>
          <% if pin.user != current_user %>
 
