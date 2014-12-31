@@ -1,6 +1,5 @@
-# One Month Rails
+# One Month Goals
 
-This is the pinteresting sample application for 
-[*One Month Rails*](http://onemonthrails.com) course.
+Building a platform in hopes to help people create smaller goals for their longer term goals.
 
 by [Ben Bowden](http://benbowden.com)
