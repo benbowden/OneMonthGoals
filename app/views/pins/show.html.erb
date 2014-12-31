@@ -22,6 +22,8 @@
 				  <p><strong> By: </strong> <%= @pin.user.name if @pin.user %></p>
 				</p>
 
+				<p><strong>Created:</strong> <%= @pin.created_at.strftime("%b %d, %Y") %></p>
+
 				<!-- 
 				<% if @pin_user == current_user %>
 					 <%= link_to edit_pin_path(@pin) do %>
@@ -33,4 +35,13 @@
 			</div>
 		</div>
 	<div>
+
+		<div class="panel panel-default">
+			
+			<div class="panel-body">
+				Check Marks
+			</div>
+
+		
 </div>
+
