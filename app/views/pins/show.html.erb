@@ -4,14 +4,21 @@
 	<div class="col-md-offset-2 col-md-8">
 		<div class="panel panel-default">
 			<div class="panel-heading center">
-				Goal Title will Go here
+
+				<!-- Some users didn't enter at start -->
+				<% if @pin.title.nil? %>
+					Goal
+
+				<% else %>
+					<%= @pin.title %>
+				<% end %>
 			</div>
 			<div class="panel-body">
 
 				<p>
 				  <strong>Description:</strong>
 				  <%= @pin.description %>
-				  <%= @pin.user %>
+				  
 				  <p><strong> By: </strong> <%= @pin.user.name if @pin.user %></p>
 				</p>
 
