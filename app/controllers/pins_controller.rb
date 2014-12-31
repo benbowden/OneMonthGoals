@@ -24,6 +24,7 @@ class PinsController < ApplicationController
 
   def create
    @pin = current_user.pins.build(pin_params)
+    #If it was created already will go to else statement, if first time being created will display 'pin was succ...'
     if @pin.save
       redirect_to @pin, notice: 'Pin was successfully created.'
     else
