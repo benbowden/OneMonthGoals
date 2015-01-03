@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   resources :pins
+  resources :checkboxes
 
   devise_for :users
   root "pins#index"

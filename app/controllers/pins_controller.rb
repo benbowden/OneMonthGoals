@@ -8,21 +8,34 @@ class PinsController < ApplicationController
     @pins = Pin.all.order("created_at DESC").paginate(:page => params[:page])
   end
 
+
     def profile
       @pins = Pin.all.order("created_at DESC").paginate(:page => params[:page])
   end
 
   def show
+    @pins = Pin.all.order("created_at DESC").paginate(:page => params[:page])
+  
+    
+    
+    
   end
 
   def new
     @pin = current_user.pins.build
+   
   end
 
   def edit
   end
 
   def create
+ 
+    #If it was created already will go to else statement, if first time being created will display 'pin was succ...'
+
+
+
+    
    @pin = current_user.pins.build(pin_params)
     #If it was created already will go to else statement, if first time being created will display 'pin was succ...'
     if @pin.save
@@ -33,6 +46,8 @@ class PinsController < ApplicationController
   end
 
   def update
+
+
     if @pin.update(pin_params)
       redirect_to @pin, notice: 'Pin was successfully updated.'
     else
