@@ -11,13 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150101181055) do
-
-  create_table "checkboxes", force: true do |t|
-    t.boolean  "checkbox"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
+ActiveRecord::Schema.define(version: 20141231020043) do
 
   create_table "pins", force: true do |t|
     t.string   "description"
