@@ -1,6 +1,7 @@
 class PinsController < ApplicationController
   before_action :set_pin, only: [:show, :edit, :update, :destroy]
   before_action :correct_user, only: [:edit, :update, :destroy]
+ 
   
 
 
@@ -15,15 +16,13 @@ class PinsController < ApplicationController
 
   def show
     @pins = Pin.all.order("created_at DESC").paginate(:page => params[:page])
-  
-    
-    
-    
   end
 
   def new
     @pin = current_user.pins.build
-   
+    @check = Check.new
+    
+
   end
 
   def edit
@@ -37,9 +36,15 @@ class PinsController < ApplicationController
 
     
    @pin = current_user.pins.build(pin_params)
+   @check = current_user.checks.build(pin_params)
+   
+  
+
     #If it was created already will go to else statement, if first time being created will display 'pin was succ...'
     if @pin.save
+
       redirect_to @pin, notice: 'Pin was successfully created.'
+
     else
       render action: 'new'
     end
@@ -75,4 +80,6 @@ class PinsController < ApplicationController
     def pin_params
       params.require(:pin).permit(:description, :image, :title)
     end
+
+
 end
