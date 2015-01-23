@@ -1,6 +1,7 @@
 class PinsController < ApplicationController
   before_action :set_pin, only: [:show, :edit, :update, :destroy]
   before_action :correct_user, only: [:edit, :update, :destroy]
+  before_action :update_pin, only: [:show]
  
   
 
@@ -36,7 +37,7 @@ class PinsController < ApplicationController
 
     
    @pin = current_user.pins.build(pin_params)
-   @check = current_user.checks.build(pin_params)
+
    
   
 
@@ -70,6 +71,10 @@ class PinsController < ApplicationController
     def set_pin
       @pin = Pin.find(params[:id])
     end
+
+    def update_pin
+      @pin = Pin.find(params[:id])
+    end 
 
     def correct_user
       @pin = current_user.pins.find_by(id: params[:id])

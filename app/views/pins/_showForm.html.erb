@@ -19,13 +19,12 @@
     <%= f.check_box :completed %>
   </div>
 
+
+
   <!-- Showcase save button depending on if it's users goal -->
-  <% if @pin_user = current_user %>
+  <% if @pin.user_id == current_user.id %>
     <div class="form-group">
       <%= f.submit "Save", class: "btn btn-primary" %>
     </div>
-  <% else %>
-       
-
   <% end %>
 <% end %>
