@@ -44,7 +44,7 @@ class PinsController < ApplicationController
     #If it was created already will go to else statement, if first time being created will display 'pin was succ...'
     if @pin.save
 
-      redirect_to @pin, notice: 'Pin was successfully created.'
+      redirect_to @pin, notice: 'Goal was successfully created.'
 
     else
       render action: 'new'
@@ -55,7 +55,7 @@ class PinsController < ApplicationController
 
 
     if @pin.update(pin_params)
-      redirect_to @pin, notice: 'Pin was successfully updated.'
+      redirect_to @pin, notice: 'Goal was successfully updated.'
     else
       render action: 'edit'
     end
@@ -78,7 +78,7 @@ class PinsController < ApplicationController
 
     def correct_user
       @pin = current_user.pins.find_by(id: params[:id])
-      redirect_to pins_path, notice: "Not authorized to edit this pin" if @pin.nil?
+      redirect_to pins_path, notice: "Not authorized to edit this Goal" if @pin.nil?
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
