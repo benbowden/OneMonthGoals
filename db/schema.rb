@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150111171731) do
+ActiveRecord::Schema.define(version: 20150123000041) do
 
   create_table "checks", force: true do |t|
     t.integer  "pin_id"
@@ -30,6 +30,7 @@ ActiveRecord::Schema.define(version: 20150111171731) do
     t.integer  "image_file_size"
     t.datetime "image_updated_at"
     t.string   "title"
+    t.boolean  "completed"
   end
 
   add_index "pins", ["user_id"], name: "index_pins_on_user_id"

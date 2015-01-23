@@ -1,0 +1,31 @@
+<%= form_for(@pin, html: {multipart:true}) do |f| %>
+
+  <!-- Displays error if needed -->
+  <% if @pin.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@pin.errors.count, "error") %> prohibited this pin from being saved:</h2>
+
+      <ul>
+      <% @pin.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <!-- Checkbox, auto decides whether to be showcasing checked or not thanks to rails -->
+  <div class="form-group">
+    <%= f.label "Completed:" %>
+    <%= f.check_box :completed %>
+  </div>
+
+  <!-- Showcase save button depending on if it's users goal -->
+  <% if @pin_user = current_user %>
+    <div class="form-group">
+      <%= f.submit "Save", class: "btn btn-primary" %>
+    </div>
+  <% else %>
+       
+
+  <% end %>
+<% end %>
