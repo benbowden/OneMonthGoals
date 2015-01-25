@@ -1,5 +1,5 @@
 # One Month Goals
 
-Building a platform in hopes to help people create smaller goals for their longer term goals.
+A site centered around accomplishing short term goals publicly.
 
 by [Ben Bowden](http://benbowden.co)
