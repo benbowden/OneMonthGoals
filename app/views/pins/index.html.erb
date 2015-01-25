@@ -11,9 +11,10 @@
 
 
 
-
+     
       <div class="box panel panel-default">
 
+       <%= link_to(@pin) do %>
         <div class="panel-body">
           <%= link_to content_tag(pin.description), pin %>
           
@@ -39,10 +40,6 @@
              <div class="actions">
 
               <%= link_to "View", pin %>
-
-         
-
-
                 <%= link_to edit_pin_path(pin) do %>
                 <span class="glyphicon glyphicon-edit"></span>
                 Edit
@@ -53,11 +50,20 @@
               <% end %>
             </div>
           <% end %>
-        
+       
         </div>
+      <% end %>
+      
       </div>
+
+
     <% end %>
+
+
   </div>
+
+
+    
 <div class="center">
    <%= will_paginate @posts, renderer: BootstrapPagination::Rails %>
 </div>

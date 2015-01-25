@@ -21,7 +21,7 @@ class PinsController < ApplicationController
 
   def new
     @pin = current_user.pins.build
-    @check = Check.new
+    
     
 
   end
@@ -43,6 +43,16 @@ class PinsController < ApplicationController
 
     #If it was created already will go to else statement, if first time being created will display 'pin was succ...'
     if @pin.save
+
+      tempNum = 0
+
+      while tempNum < 30
+
+        @check = Check.create
+
+        tempNum = tempNum + 1
+
+      end
 
       redirect_to @pin, notice: 'Goal was successfully created.'
 

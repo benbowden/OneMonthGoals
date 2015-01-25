@@ -22,7 +22,7 @@
 				  <p><strong> By: </strong> <%= @pin.user.name if @pin.user %></p>
 				</p>
 
-				<p><strong>Created:</strong> <%= @pin.created_at.strftime("%b %d, %Y") %></p>
+				<p>Created <%= time_ago_in_words(@pin.created_at) %> ago</p>
 
 				<!-- 
 				<% if @pin_user == current_user %>
