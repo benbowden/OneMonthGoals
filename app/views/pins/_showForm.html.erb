@@ -14,17 +14,26 @@
   <% end %>
 
   <!-- Checkbox, auto decides whether to be showcasing checked or not thanks to rails -->
+  <!-- This code also does if check to see if user can update checkbox or not -->
   <div class="form-group">
     <%= f.label "Completed:" %>
-    <%= f.check_box :completed, :disabled => true %>
+    <% if user_signed_in? %>
+      <% if @pin.user_id == current_user.id %>
+        <%= f.check_box :completed, :disabled => false %>
+      <% else %>
+        <%= f.check_box :completed, :disabled => true %>
+      <% end %>
+    <% else %>
+      <%= f.check_box :completed, :disabled => true %>
+    <% end %>
   </div>
 
-
-
-  <!-- Showcase save button depending on if it's users goal -->
-  <% if @pin.user_id == current_user.id %>
-    <div class="form-group">
-      <%= f.submit "Save", class: "btn btn-primary" %>
-    </div>
+  <!-- Showcase save button depending on if it's that users goal -->
+  <% if user_signed_in? %>
+    <% if @pin.user_id == current_user.id %>
+      <div class="form-group">
+        <%= f.submit "Save", class: "btn btn-primary" %>
+      </div>
+    <% end %>
   <% end %>
 <% end %>

@@ -2,6 +2,7 @@ class PinsController < ApplicationController
   before_action :set_pin, only: [:show, :edit, :update, :destroy]
   before_action :correct_user, only: [:edit, :update, :destroy]
   before_action :update_pin, only: [:show]
+  
  
   
 
@@ -44,15 +45,15 @@ class PinsController < ApplicationController
     #If it was created already will go to else statement, if first time being created will display 'pin was succ...'
     if @pin.save
 
-      tempNum = 0
+      # tempNum = 0
 
-      while tempNum < 30
+      # while tempNum < 30
 
-        @check = Check.create
+      #   @check = Check.create
 
-        tempNum = tempNum + 1
+      #   tempNum = tempNum + 1
 
-      end
+      # end
 
       redirect_to @pin, notice: 'Goal was successfully created.'
 
