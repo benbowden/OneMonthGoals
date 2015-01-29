@@ -1,13 +1,19 @@
 Rails.application.routes.draw do
+  get 'users/show'
+
   resources :checks
 
   resources :pins
   resources :checkboxes
 
   devise_for :users
+  match 'users/:id' => 'users#show', :via => [:get],  as: :user
   root "pins#index"
   get "about" => "pages#about"
   get "profile" => "pins#profile"
+
+  
+
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
