@@ -19,7 +19,7 @@
 				  <strong>Description:</strong>
 				  <%= @pin.description %>
 				  
-				  <p><strong> By: </strong> <%= @pin.user.name if @pin.user %></p>
+				  <p><strong> By: </strong> <%= link_to @pin.user.name,  @pin.user if @pin.user%></p>
 				</p>
 
 				<p>Created <%= time_ago_in_words(@pin.created_at) %> ago</p>
