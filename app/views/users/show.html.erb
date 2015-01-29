@@ -1,8 +1,39 @@
-<h1>Users#show</h1>
-<p>Find me in app/views/users/show.html.erb</p>
-<h1><%= @user.name %></h1>
+<h1><%= @user.name %>'s Goals:</h1><br>
 
-<% @pins.each do |pin| %>
-	<%= pin.title %>
+<div id="pins" class="transitions-enabled">
 
-<% end %>
+	<% @pins.each do |pin| %>
+		
+		<div class="box panel panel-default"> 
+	        <%= link_to(pin) do %>
+	          <div class="panel-body">
+	            
+	            
+	            <!-- used to not allow titles and was just descriptions -->
+	          <% if pin.title.nil? %>
+	            <p><%= pin.description %></p>
+	          <% else %>
+	            <p><%= pin.title %></p>
+
+	          <% end %>
+	          <p><strong><%= pin.user.name if pin.user %></strong>
+	         <% if pin.user != current_user %>
+
+	         
+
+
+
+	         <% end %>
+	          
+	            
+	           
+
+	            
+	          </div><!-- end div panel-body -->
+	        
+	        
+	        </div><!-- end div box panel panel-default -->
+	        <% end %>
+
+	<% end %>
+</div>
