@@ -7,6 +7,7 @@
 }
 .pinIn{
 	display: inline-block;
+	text-decoration: none;
 }
 
 .box {
@@ -16,6 +17,14 @@
 
 .box img {
 	width: 100%;
+}
+
+// removes underline when hovering over box on index page
+.box {
+	a:hover, a:visited, a:link, a:active
+	{
+	    text-decoration: none;
+	}
 }
 
 

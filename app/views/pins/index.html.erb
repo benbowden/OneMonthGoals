@@ -6,64 +6,45 @@
 
   
     <% @pins.each do |pin| %>
+      
+        <div class="box panel panel-default"> 
 
-
-
-
-
-     
-      <div class="box panel panel-default">
-
-       <%= link_to(@pin) do %>
-        <div class="panel-body">
-          <%= link_to content_tag(pin.description), pin %>
-          
-          <!-- used to not allow titles and was just descriptions -->
+        <%= link_to(pin) do %>
+          <div class="panel-body">
+            
+            
+            <!-- used to not allow titles and was just descriptions -->
           <% if pin.title.nil? %>
             <p><%= pin.description %></p>
           <% else %>
             <p><%= pin.title %></p>
 
           <% end %>
-          
-          <p><strong><%= pin.user.name if pin.user %></strong>
+           <p><strong><%= pin.user.name if pin.user %></strong>
          <% if pin.user != current_user %>
 
-         <p> <%= link_to "View", pin %></p>
+         
 
 
 
          <% end %>
+          
+            
+           
 
-          <% if pin.user == current_user %>
+            
+          </div><!-- end div panel-body -->
+        
+        
+        </div><!-- end div box panel panel-default -->
+        <% end %>
+   
+  <% end %>
+</div><!-- end main div -->
 
-             <div class="actions">
-
-              <%= link_to "View", pin %>
-                <%= link_to edit_pin_path(pin) do %>
-                <span class="glyphicon glyphicon-edit"></span>
-                Edit
-              <% end %>
-                <%= link_to pin, method: :delete, data: { confirm: 'Are you sure?' } do %>
-                <span class="glyphicon glyphicon-trash"></span>
-                Delete
-              <% end %>
-            </div>
-          <% end %>
-       
-        </div>
-      <% end %>
-      
-      </div>
-
-
-    <% end %>
-
-
-  </div>
-
-
-    
 <div class="center">
    <%= will_paginate @posts, renderer: BootstrapPagination::Rails %>
 </div>
+
+
+
